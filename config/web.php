@@ -5,6 +5,8 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+	'language' => 'zh-CN',
+	'timeZone' => 'Asia/Shanghai',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -38,6 +40,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

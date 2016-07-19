@@ -1,0 +1,132 @@
+.banner_div{
+	margin-top:60px;
+	width:100%;
+	overflow:hidden;
+}
+.banner{
+	position:relative;
+}
+.banner_img_div{
+	display:table;float:left;
+	text-align:center;
+	cursor:pointer;
+}
+.banner_img_div span{
+	display:table-cell; 
+	vertical-align:middle; 
+}
+.banner_img_div img{
+	max-width:100%;
+}
+.banner_min_btn_div{
+	position:relative;
+	top:-7%;width:auto;
+	text-align:center;
+	cursor:default;
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.banner_min_btn_div div{
+	display:inline-block;
+	width:14px;height:14px;
+	background-color:black;
+	cursor:pointer;
+	-moz-border-radius: 7px;      /* Gecko browsers */
+    -webkit-border-radius: 7px;   /* Webkit browsers */
+    border-radius:7px;
+}
+.model_h1{
+	width:1240px;
+	margin:60px auto 0;
+}
+.model_h1 h1{
+	display:inline-block;
+	width:auto;
+	padding:30px 20px;
+	padding-right:10px;
+	font-size:18px;
+	font-weight:400;
+}
+.model_h1 span{
+	position:relative;
+	top:3px;
+	display:inline-block;
+	font-size:15px;
+	font-weight:400;
+	color:gray;
+	line-height:18px;
+}
+.model_div{
+	max-width:1240px;
+	margin:0 auto;
+}
+.model_left{
+	float:left;
+	width:236px;height:618px;
+	background-color:black;
+}
+.model{
+	position:relative;
+	width:1240px;height:618px;
+	font-size:0;
+}
+.model_tripe_div{
+	display:inline-block;
+	width:235px;height:301px;
+	margin-left:16px;
+	margin-bottom:16px;
+	background-color:white;
+	text-align:center;
+	transition:all .2s linear;
+}
+.model_tripe_div:hover{
+	box-shadow:0 15px 30px rgba(0,0,0,0.1);
+	transform:translate3d(0, -2px, 0);
+}
+.model_img_div{
+	height:168px;width:168px;
+	margin:20px auto 20px;
+	display:table;text-align:center;
+	cursor:pointer;
+}
+.model_img_div span{
+	display:table-cell; 
+	vertical-align:middle; 
+}
+.model_img_div img{
+	max-height:168px;max-width:168px;
+}
+.model_title_div{
+	height:93px;width:100%;
+}
+.model_title_div h3{
+	font-size:16px;font-weight:400;
+	padding:2px 0;
+}
+.model_title_div p{
+	width:168px;max-height:30px;margin:0 auto;
+	font-size:12px;font-weight:400;
+	padding:2px 0;overflow:hidden;
+	color:#929292;
+}
+.tag{
+	padding:2px 0;
+}
+.tag a{
+	display:inline-block;
+	font-size:12px;
+	padding:0 6px;
+	margin:0 3px;
+	-moz-border-radius: 12px;      /* Gecko browsers */
+    -webkit-border-radius: 12px;   /* Webkit browsers */
+    border-radius:12px;
+	border:1px solid #929292;
+	color:#929292;
+	cursor:pointer;
+}
+.tag a:hover{
+	background-color:#929292;
+	color:white;
+}

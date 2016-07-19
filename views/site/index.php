@@ -2,52 +2,180 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = '首页';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<link href="/views/site/css/index.css" rel="stylesheet">
+	
+<script src="/views/site/js/index.js" ></script>
+<div class="banner_div">
+	<div class="banner" onmouseover="stop()" onmouseout="star()">
+		<div class="banner_img_div" style="background-color:gray;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+		<div class="banner_img_div" style="background-color:yellow;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+		<div class="banner_img_div" style="background-color:blue;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+		<div class="banner_img_div" style="background-color:red;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+		<div class="banner_img_div" style="background-color:gray;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+		<div class="banner_img_div" style="background-color:gray;">
+			<span><img src="/views/site/images/slider1.jpg" /></span>
+		</div>
+	</div>
+    <div class="banner_min_btn_div" onmouseover="stop()">
+        <div onclick="minBtnClick(0)"></div>
+        <div onclick="minBtnClick(1)"></div>
+        <div onclick="minBtnClick(2)"></div>
+        <div onclick="minBtnClick(3)"></div>
+        <div onclick="minBtnClick(4)"></div>
+        <div onclick="minBtnClick(5)"></div>
     </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+</div>
+<div class="model_h1"><h1>优秀作品展示</h1><span>每个作品都是魅客的灵魂</span></div>
+<div class="model_div">
+	<div class="model_left">
+	</div>
+	<div class="model">
+		<div class="model_tripe_div">
+			<div class="model_img_div" background="white"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="model_h1"><h1>优秀作品展示</h1><span>每个作品都是魅客的灵魂</span></div>
+<div class="model_div">
+	<div class="model_left">
+	</div>
+	<div class="model">
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+		<div class="model_tripe_div">
+			<div class="model_img_div"><span><img src="/views/site/images/1.jpg" /></span></div>
+			<div class="model_title_div">
+				<h3><a>作品名称</a></h3>
+				<div class="tag"><a>标签</a><a>标签</a></div>
+				<p>简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+			</div>
+		</div>
+	</div>
 </div>

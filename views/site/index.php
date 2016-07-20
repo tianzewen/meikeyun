@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = '首页';
+$this->title = '魅客云-你专属的Maker';
 ?>
 <link href="/views/site/css/index.css" rel="stylesheet">
 	

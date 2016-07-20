@@ -17,6 +17,9 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="别具匠心,手工教程,手工皮革,手工定制,个性体验,时尚生活"/>
+	<meta name="description" content="交流分享有关手工的各种图片教程,定制手工饰品,手工服饰,手工皮革等手工制品"/>
+	<link rel="shortcut icon" type="image/x-icon" href="/views/public/images/logo.ico"/>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
 	<link href="/views/public/css/core.css" rel="stylesheet">
@@ -28,7 +31,6 @@ AppAsset::register($this);
 	<script src="/views/public/js/functions.js"></script>
 </head>
 <body>
-<?php $this->beginBody() ?>
 
 <div class="wrap">
 	<nav class="nav">
@@ -112,15 +114,14 @@ AppAsset::register($this);
 		<div class="registerForm_div">
 			<!--<div class="close_btn" onclick="closeWin('signinForm')">×</div>-->
 			<form id="userRegisterForm" class="userForm" name="userRegisterForm" method="post" action="/web/user/register">
-				<img class="logo" src="{{:ip}}views/public/images/logo64x64.png" />
+				<img class="logo" src="/views/public/images/logo64x64.png" />
 				<input type='hidden' name='_csrf' value="{{:csrf}}"/>
-				<input class="login_input" name="Userbasicinfo[phone]" autoComplete="off" placeholder="手机号码" type="text" />
-				<input class="icode" name="Userbasicinfo[icode]" autoComplete="off" placeholder="6位验证码" type="text" />
+				<input class="login_input" name="userRegisterForm[phone]" autoComplete="off" placeholder="手机号码" type="text" />
+				<input class="icode" name="userRegisterForm[icode]" autoComplete="off" placeholder="6位验证码" type="text" />
 				<div class="get_icode_btn" onclick="getIcode()">获取验证码</div>
-				<input class="login_input" name="Userbasicinfo[password]" placeholder="8-16密码" type="password" />
+				<input class="login_input" name="userRegisterForm[password]" placeholder="8-16密码" type="password" />
 				<input class="login_input register_sub" onclick="useRegisterSub()" readonly type="text" value="注册"/>
 				<a class="to_login" onclick="openWin('signinForm')">已有账号，去登录</a>
-				<input type="submit"/>
 			</form>
 		</div>
 	</div>
@@ -249,9 +250,6 @@ AppAsset::register($this);
 	</script>
 
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
         <?= $content ?>
     </div>
 </div>
@@ -259,7 +257,6 @@ AppAsset::register($this);
 <footer class="footer">
 </footer>
 
-<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

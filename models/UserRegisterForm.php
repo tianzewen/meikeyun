@@ -80,7 +80,7 @@ class UserRegisterForm extends Model
 			'permissions' => 'user',
 			'phone' => $this->phone,
 			//哈希双向加密
-			'password' => password_hash($this->password, PASSWORD_DEFAULT),
+			'password' => Yii::$app->getSecurity()->generatePasswordHash($this->password),
 		]);
 		//添加用户信息
 		if( $user->save() ){

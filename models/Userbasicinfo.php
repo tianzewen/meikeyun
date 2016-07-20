@@ -1,6 +1,6 @@
 <?php
 
-namespace app\commands;
+namespace app\models;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -14,18 +14,29 @@ class Userbasicinfo extends ActiveRecord implements IdentityInterface
 	{
 		return 'userbasicinfo';
 	}
+    const SCENARIO_LOGIN = 'login';
+    const SCENARIO_REGISTER = 'register';
+	
+	public $icode;
 	
 	public function rules()
 	{
-        return [
-            [['id', 'password', 'phone'], 'required'],
-            [['id'], 'integer'],
+		return [
+			// 在任何场景下都需要验证
+			['phone', 'string', 'length' => [11]],
+			['password', 'string', 'length' => [8, 16]],
             [['birthday', 'sex', 'permissions'], 'safe'],
 			[['name'], 'string', 'length'=>[1,12]],
-            [['password', 'mask'], 'string', 'max' => 60],
-            [['phone'], 'string', 'max' => 11],
+            [['mask'], 'string', 'max' => 60],
+			
+			// 在"register" 场景下 phone 和 password 必须有值
+			[['phone', 'password'], 'required', 'on' => 'register'],
             [['phone'], 'unique'],
-        ];
+
+			// 在 "login" 场景下 phone 、 icode 和 password 必须有值
+			[['phone', 'password'], 'required', 'on' => 'login'],
+			['phone', 'exist', 'on' => 'login'],
+		];
 	}
 
     /**
@@ -76,6 +87,14 @@ class Userbasicinfo extends ActiveRecord implements IdentityInterface
     {
         return $this->getAuthKey() === $authKey;
     }
+
+    public function scenarios()
+    {
+        return [
+            self::SCENARIO_LOGIN => ['phone', 'password'],
+            self::SCENARIO_REGISTER => ['phone', 'password'],
+        ];
+    }
 	
 	// public function beforeSave($insert)
     // {
@@ -87,6 +106,45 @@ class Userbasicinfo extends ActiveRecord implements IdentityInterface
         // }
         // return false;
     // }
+	
+	/***
+	 * 注册
+	 */
+	public function register()
+	{
+		//查看手机号是否已生成验证码
+		// if( !isset(Yii::$app->session['tel_'.$this->phone]) || empty(Yii::$app->session['tel_'.$this->phone]) ){
+			// return Tool::return_json( false, 'icode', '验证码失效，请重新获取验证码' );
+		// }
+		//用户输入密码是否与生成的验证码一致
+		// if( $this->icode != Yii::$app->session['tel_'.$this->phone]['icode']){
+			// return Tool::return_json( false, 'icode', '验证码错误' );
+		// }
+		
+		$this->id = Tool::timeToMillisecond(microtime());
+		$this->permissions = 'user';
+		$this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+		//添加用户信息
+		if( $this->save() ){
+			return Tool::return_json( true );
+		}
+		var_dump($this->getErrors());
+		return Tool::return_json( false, 'message', '数据库保存失败' );
+	}
+	
+	/***
+	 * 登录
+	 */
+	public function login()
+	{
+		$identity = self::findOne(['phone' => $this->phone]);
+		
+		if(Yii::$app->getSecurity()->validatePassword($this->password, $identity->password))
+		{
+			Yii::$app->user->login($identity);
+			return Tool::return_json( true );
+		}
+	}
 
     /**
      * @inheritdoc

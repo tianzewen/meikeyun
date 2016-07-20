@@ -20,7 +20,7 @@ class UserLoginForm extends Model
         return [
             [['phone', 'password'], 'required'],
 			['phone', 'string', 'length' => [11]],
-			['phone', 'exist', 'message' => '账号不存在'],
+			['phone', 'exist', 'targetClass' => 'app\commands\Userbasicinfo', 'message' => '账号不存在'],
 			['password', 'string', 'length' => [8, 16]],
         ];
     }

@@ -97,16 +97,16 @@ AppAsset::register($this);
 		<div class="siginForm_div">
 			<!--<div class="close_btn" onclick="closeWin('signinForm')">×</div>-->
 			<form id="userSigninForm" class="userForm" name="userSigninForm" method="post" action="/web/user/login">
-				<img class="logo" src="/views/public/images/logo64x64.png" />
-				<input type='hidden' name='_csrf' value="{{:csrf}}"/>
-				<input class="login_input" name="UserLoginForm[phone]" autoComplete="off" placeholder="手机号码" type="text" />
-				<input class="login_input" name="UserLoginForm[password]" placeholder="密码" type="password" />
+				<img class="logo" src="/views/public/images/logo64x64.png" >
+				<input type='hidden' name='_csrf'>
+				<input class="login_input" name="UserLoginForm[phone]" autoComplete="off" placeholder="手机号码" type="text" >
+				<input class="login_input" name="UserLoginForm[password]" placeholder="密码" type="password" >
 				<div class="login_checkbox_div"><input id="remember" type="checkbox" /><label for="remember"> 记住我</label></div>
 				<div class="login_forget_div"><a>忘记密码？</a></div>
-				<input class="login_input login_sub" onclick="userSigninSub()" readonly type="text" value="登录"/>
+				<input class="login_input login_sub" onclick="userSigninSub()" readonly type="text" value="登录">
 				<div class="login_other">使用第三方登录:</div>
 				<a class="to_register" onclick="openWin('registerForm')">注册魅客云账号</a>
-				<input type="submit" style="display:none;" value="提交按钮，测试用"/>
+				<input type="submit" style="display:none;" value="提交按钮，测试用">
 			</form>
 		</div>
 	</div>
@@ -114,14 +114,15 @@ AppAsset::register($this);
 		<div class="registerForm_div">
 			<!--<div class="close_btn" onclick="closeWin('signinForm')">×</div>-->
 			<form id="userRegisterForm" class="userForm" name="userRegisterForm" method="post" action="/web/user/register">
-				<img class="logo" src="/views/public/images/logo64x64.png" />
-				<input type='hidden' name='_csrf' value="{{:csrf}}"/>
-				<input class="login_input" name="userRegisterForm[phone]" autoComplete="off" placeholder="手机号码" type="text" />
-				<input class="icode" name="userRegisterForm[icode]" autoComplete="off" placeholder="6位验证码" type="text" />
+				<img class="logo" src="/views/public/images/logo64x64.png" >
+				<input type='hidden' name='_csrf' value="<?php echo Yii::$app->request->csrfToken; ?>">
+				<input class="login_input" name="UserRegisterForm[phone]" autoComplete="off" placeholder="手机号码" type="text" >
+				<input class="icode" name="UserRegisterForm[icode]" autoComplete="off" placeholder="6位验证码" type="text" >
 				<div class="get_icode_btn" onclick="getIcode()">获取验证码</div>
-				<input class="login_input" name="userRegisterForm[password]" placeholder="8-16密码" type="password" />
-				<input class="login_input register_sub" onclick="useRegisterSub()" readonly type="text" value="注册"/>
+				<input class="login_input" name="UserRegisterForm[password]" placeholder="8-16密码" type="password" >
+				<input class="login_input register_sub" onclick="useRegisterSub()" readonly type="text" value="注册">
 				<a class="to_login" onclick="openWin('signinForm')">已有账号，去登录</a>
+				<input type="submit" >
 			</form>
 		</div>
 	</div>

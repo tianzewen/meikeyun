@@ -62,7 +62,7 @@ class UserRegisterForm extends Model
 	/*
 	 * 注册
 	 */
-	public function regitser()
+	public function register()
 	{
 		//查看手机号是否已生成验证码
 		if( !isset(Yii::$app->session['tel_'.$this->phone]) || empty(Yii::$app->session['tel_'.$this->phone]) ){
